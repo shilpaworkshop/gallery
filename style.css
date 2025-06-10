@@ -1,0 +1,234 @@
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    background-color: #f4f4f4;
+    color: #333;
+}
+
+header {
+    background-color: #333;
+    color: white;
+    padding: 1rem 0;
+    text-align: center;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+}
+
+header h1 {
+    margin: 0;
+}
+
+nav {
+    margin-top: 10px;
+}
+
+nav button {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 8px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin: 0 5px;
+}
+
+nav button:hover {
+    background-color: #0056b3;
+}
+
+.gallery-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 20px;
+    padding: 20px;
+    max-width: 1200px;
+    margin: 20px auto;
+}
+
+.gallery-item {
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    overflow: hidden;
+    position: relative;
+    cursor: pointer;
+    transition: transform 0.2s ease-in-out;
+}
+
+.gallery-item:hover {
+    transform: translateY(-5px);
+}
+
+.gallery-item img,
+.gallery-item video {
+    width: 100%;
+    height: 200px; /* 고정 높이 */
+    object-fit: cover; /* 이미지가 잘리지 않고 채워지도록 */
+    display: block;
+}
+
+.item-overlay {
+    padding: 15px;
+}
+
+.item-overlay h3 {
+    margin-top: 0;
+    color: #007bff;
+}
+
+.item-overlay p {
+    font-size: 0.9em;
+    color: #666;
+}
+
+.actions {
+    display: flex;
+    align-items: center;
+    justify-content: space-between; /* 추천/비추천 버튼 간격 조절 */
+    margin-top: 10px;
+}
+
+.actions button {
+    background: none;
+    border: 1px solid #ccc;
+    padding: 5px 10px;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-left: 5px;
+    transition: background-color 0.2s;
+}
+
+.actions button:hover {
+    background-color: #e9e9e9;
+}
+
+.recommend-count {
+    font-weight: bold;
+    margin-right: 10px;
+    color: #28a745; /* 추천 수 색상 */
+}
+
+.disrecommend-count {
+    font-weight: bold;
+    color: #dc3545; /* 비추천 수 색상 */
+}
+
+.post-info {
+    font-size: 0.85em;
+    color: #888;
+    padding: 0 15px 15px;
+    display: flex;
+    justify-content: space-between;
+}
+
+/* 베스트글 스타일 (추천수 10개 이상) */
+.gallery-item.best-post {
+    border: 3px solid #ffc107; /* 강조 테두리 */
+    box-shadow: 0 4px 15px rgba(255, 193, 7, 0.4);
+}
+
+/* Modal styles */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgba(0,0,0,0.6); /* Black w/ opacity */
+}
+
+.modal-content {
+    background-color: #fefefe;
+    margin: 10% auto; /* 10% from the top and centered */
+    padding: 30px;
+    border-radius: 8px;
+    width: 80%; /* Could be more or less, depending on screen size */
+    max-width: 600px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+    position: relative;
+}
+
+.close-button {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    position: absolute;
+    top: 10px;
+    right: 20px;
+}
+
+.close-button:hover,
+.close-button:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.modal-content h2, .modal-content h4 {
+    color: #333;
+    margin-top: 0;
+}
+
+.modal-content p {
+    margin-bottom: 10px;
+}
+
+/* Detail Modal specific styles */
+#detailMedia {
+    text-align: center;
+    margin-bottom: 20px;
+}
+#detailMedia img,
+#detailMedia video {
+    max-width: 100%;
+    max-height: 400px;
+    height: auto;
+    border-radius: 8px;
+}
+
+.comments-section {
+    margin-top: 20px;
+    border-top: 1px solid #eee;
+    padding-top: 15px;
+}
+
+.comment {
+    background-color: #f9f9f9;
+    padding: 10px;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    border: 1px solid #eee;
+}
+
+.comment-author {
+    font-weight: bold;
+    color: #007bff;
+    margin-right: 5px;
+}
+
+#commentForm {
+    display: flex;
+    margin-top: 15px;
+}
+
+#commentForm input[type="text"] {
+    flex-grow: 1;
+    margin-right: 10px;
+    margin-bottom: 0;
+    width: auto; /* Flexbox 내에서 너비 조정 */
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+#commentForm button {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+}

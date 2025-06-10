@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>테마 갤러리 (추천/비추천)</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header>
+        <h1>나만의 테마 갤러리</h1>
+        <nav>
+            <button id="refreshGalleryBtn">갤러리 새로고침</button>
+        </nav>
+    </header>
+
+    <main class="gallery-container">
+        </main>
+
+    <div id="detailModal" class="modal">
+        <div class="modal-content">
+            <span class="close-button">&times;</span>
+            <div id="detailMedia">
+                </div>
+            <h3 id="detailTitle"></h3>
+            <p id="detailTheme"></p> <p id="detailContent"></p>
+            <div class="detail-actions">
+                <span id="detailRecommendCount">추천: 0</span>
+                <button id="detailRecommendBtn">👍</button>
+                <span id="detailDisrecommendCount">비추천: 0</span>
+                <button id="detailDisrecommendBtn">👎</button>
+            </div>
+            </div>
+    </div>
+
+    <script src="js/script.js"></script>
+</body>
+</html>
